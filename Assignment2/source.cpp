@@ -1,4 +1,5 @@
 #include <fstream>
+#include <iostream>
 #include <string>
 #include <vector>
 
@@ -30,6 +31,14 @@ int main()
     }
 
     inputFile.close();
+
+#ifdef _DEBUG
+    for (const STUDENT_DATA& student : students)
+    {
+        std::cout << student.firstName << " "
+            << student.lastName << std::endl;
+    }
+#endif
 
     return 1;
 }
